@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Api::UsersControllerTest < ActionDispatch::IntegrationTest
+class Api::SessionsControllerTest < ActionDispatch::IntegrationTest
   context "#create" do
     should "login with correct credentials" do
       post api_session_path, params: { session: { name: "🎉", password: "password" } }

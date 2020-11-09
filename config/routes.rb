@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
 
     resource :session
+
+    resources :messages
   end
 
   get "*path" => "pages#app"

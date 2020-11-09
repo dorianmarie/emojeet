@@ -18,6 +18,7 @@ class Api::UsersController < ApiController
 
   def current
     @user = current_user
+    render :show
   end
 
   private
