@@ -22,6 +22,11 @@ group :development do
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen"
+
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-rbenv"
+  gem "capistrano3-puma"
 end
 
 group :test do
