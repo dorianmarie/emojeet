@@ -27,7 +27,7 @@ group :development do
   gem "capistrano"
   gem "capistrano-rails"
   gem "capistrano-rbenv"
-  gem "capistrano3-puma"
+  gem "capistrano3-puma", "4.0.0"
 end
 
 group :test do
