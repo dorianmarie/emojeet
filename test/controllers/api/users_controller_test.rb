@@ -36,7 +36,8 @@ class Api::UsersControllerTest < ActionDispatch::IntegrationTest
 
     should "not return any user when logged out" do
       get current_api_users_path
-      assert_response :bad_request
+      assert_response :success
+      assert_nil json_response
     end
   end
 end

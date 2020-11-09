@@ -1,6 +1,4 @@
 class Api::UsersController < ApiController
-  before_action :require_current_user, only: :current
-
   def create
     @user = User.new(user_params)
 
@@ -17,6 +15,11 @@ class Api::UsersController < ApiController
   end
 
   def current
+    if !current_user
+      render json: nil
+      return
+    end
+
     @user = current_user
     render :show
   end

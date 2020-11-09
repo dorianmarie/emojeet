@@ -7,13 +7,8 @@ export const CurrentUserProvider = ({ children }) => {
 
   const fetchCurrentUser = async () => {
     let response = await fetch("/api/users/current")
-
-    if (response.status === 200) {
-      response = await response.json()
-      setCurrentUser(response)
-    } else {
-      setCurrentUser(null)
-    }
+    response = await response.json()
+    setCurrentUser(response)
   }
 
   return (

@@ -13,7 +13,7 @@ class Api::SessionsControllerTest < ActionDispatch::IntegrationTest
       post api_session_path, params: { session: { name: "🎉", password: "wrong password" } }
       assert_response :bad_request
       get current_api_users_path
-      assert_response :bad_request
+      assert_nil json_response
     end
   end
 
@@ -26,7 +26,7 @@ class Api::SessionsControllerTest < ActionDispatch::IntegrationTest
       delete api_session_path
       assert_response :success
       get current_api_users_path
-      assert_response :bad_request
+      assert_nil json_response
     end
   end
 end
