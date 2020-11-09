@@ -20,13 +20,6 @@ class Api::MessagesController < ApiController
     end
   end
 
-  def destroy
-    @message = current_user.messages.find(params[:id])
-    @message.destroy!
-
-    render_success
-  end
-
   private
 
   def message_params

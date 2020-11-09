@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { useCurrentUser } from "./CurrentUserContext"
 import fetchWithCsrf from "./fetchWithCsrf"
+import NewMessage from "./NewMessage"
 
 const Header = () => {
   const { currentUser, fetchCurrentUser } = useCurrentUser()
@@ -21,14 +22,18 @@ const Header = () => {
       <Link to="/" className="text-5xl text-center block">📙</Link>
 
       {currentUser && (
-        <div className="flex">
-          <Link to={`/👤/${currentUser.name}`} className="block w-full text-center text-3xl">
-            {currentUser.name}
-          </Link>
-          <a href="#" onClick={(e) => logout(e)} className="block w-full text-center text-3xl">
-            🔌
-          </a>
-        </div>
+        <>
+          <div className="flex mb-4">
+            <Link to={`/👤/${currentUser.name}`} className="block w-full text-center text-3xl">
+              {currentUser.name}
+            </Link>
+            <a href="#" onClick={(e) => logout(e)} className="block w-full text-center text-3xl">
+              🔌
+            </a>
+          </div>
+
+          <NewMessage />
+        </>
       )}
 
       {!currentUser && (

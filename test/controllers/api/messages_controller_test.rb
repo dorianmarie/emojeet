@@ -30,14 +30,4 @@ class Api::MessagesControllerTest < ActionDispatch::IntegrationTest
       assert_response :bad_request
     end
   end
-
-  context "#destroy" do
-    should "delete the message when logged in as the user who created it" do
-      login(user: users(:one))
-      assert_difference 'Message.count', -1 do
-        delete api_message_path(messages(:one))
-        assert_response :success
-      end
-    end
-  end
 end
