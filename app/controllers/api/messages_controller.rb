@@ -1,6 +1,10 @@
 class Api::MessagesController < ApiController
   before_action :require_current_user, only: [:create, :destroy]
 
+  def index
+    @messages = Message.order(created_at: :desc)
+  end
+
   def show
     @message = Message.find(params[:id])
   end

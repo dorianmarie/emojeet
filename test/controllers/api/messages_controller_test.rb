@@ -1,6 +1,14 @@
 require "test_helper"
 
 class Api::MessagesControllerTest < ActionDispatch::IntegrationTest
+  context "#index" do
+    should "return a message" do
+      get api_messages_path
+      assert_response :success
+      assert_equal messages(:one).content, json_response["messages"][0]["content"]
+    end
+  end
+
   context "#show" do
     should "return a message" do
       get api_message_path(messages(:one))
