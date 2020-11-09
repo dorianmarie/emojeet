@@ -1,0 +1,7 @@
+one:
+  name: 🎉
+  password_digest: <%= BCrypt::Password.create('password') %>
+
+two:
+  name: ♥️
+  password_digest: <%= BCrypt::Password.create('password') %>
