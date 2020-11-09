@@ -5,8 +5,8 @@ set :repo_url, "git@github.com:dorianmarie/emojeet.git"
 set :user, "ec2-user"
 set :deploy_to, -> { "/home/#{fetch(:user)}/applications/#{fetch(:application)}" }
 
-append :linked_files, ".env.production", ".env.staging"
-append :linked_dirs, "tmp/pids", "tmp/sockets", "log", "node_modules", "storage"
+append :linked_files, ".env"
+append :linked_dirs, "tmp/pids", "tmp/sockets", "log", "node_modules"
 
 set :format_options, truncate: false
 

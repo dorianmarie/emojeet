@@ -10,6 +10,7 @@ gem "jbuilder"
 gem "bcrypt"
 gem "slim-rails"
 gem "emoji_regex"
+gem "dotenv-rails"
 
 gem "bootsnap", require: false
 
